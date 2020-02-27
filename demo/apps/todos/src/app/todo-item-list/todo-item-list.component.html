@@ -1,0 +1,16 @@
+<div>
+  <h1>Todo List</h1>
+  <demo-cards-list [listRef]="todoListRef" [cardRef]="todoCardRef" [data]="todos"></demo-cards-list>
+</div>
+
+<div>
+  <ng-template #todoListRef let-todos="data">
+    <demo-todo-item-list-row
+      *ngFor="let todo of todos" [todoItem]="todo"></demo-todo-item-list-row>
+  </ng-template>
+
+  <ng-template #todoCardRef let-todo="data">
+    <demo-todo-item-card [todoItem]="todo"></demo-todo-item-card>
+  </ng-template>
+</div>
+

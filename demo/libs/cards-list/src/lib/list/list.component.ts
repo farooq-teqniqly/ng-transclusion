@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'demo-list',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
   constructor() { }
+
+  @Input() listRef: TemplateRef<any>;
+  @Input() data: any;
 
   ngOnInit(): void {
   }
