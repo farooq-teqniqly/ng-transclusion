@@ -120,6 +120,38 @@
           }
         }
       }
+    },
+    "custom-button": {
+      "projectType": "library",
+      "root": "libs/custom-button",
+      "sourceRoot": "libs/custom-button/src",
+      "prefix": "button-demo",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/custom-button/tsconfig.lib.json",
+              "libs/custom-button/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/custom-button/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/custom-button/jest.config.js",
+            "tsConfig": "libs/custom-button/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/custom-button/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
