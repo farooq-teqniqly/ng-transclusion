@@ -1,1 +1,13 @@
-<p>cards works!</p>
+<div *ngIf="data.length > -0; else noContent">
+  <div *ngFor="let dataItem of data">
+    <ng-container *ngIf="cardRef; else noCard" [ngTemplateOutlet]="cardRef" [ngTemplateOutletContext]="{data: dataItem}"></ng-container>
+  </div>
+</div>
+
+<ng-template #noContent>
+  <p>No content.</p>
+</ng-template>
+
+<ng-template #noCard>
+  <p>No card.</p>
+</ng-template>
