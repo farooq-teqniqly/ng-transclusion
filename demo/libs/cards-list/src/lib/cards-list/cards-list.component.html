@@ -1,0 +1,12 @@
+<div>
+  <button (click)="showCards()">Show cards</button>
+  <button (click)="showList()">Show List</button>
+</div>
+
+<ng-container *ngIf="displayMode === 'cards'">
+  <demo-cards [cardRef]="cardRef" [data]="data"></demo-cards>
+</ng-container>
+
+<ng-container *ngIf="displayMode === 'list'">
+  <demo-list [listRef]="listRef" [data]="data"></demo-list>
+</ng-container>
