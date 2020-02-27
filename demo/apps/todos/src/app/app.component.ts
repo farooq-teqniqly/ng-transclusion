@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todos';
+
+  todos = [
+    { name: 'Eat', content: 'East something.'},
+    { name: 'Study', content: 'Study for test.'},
+    { name: 'Groceries', content: 'Go to Safeway.'}
+  ];
 }

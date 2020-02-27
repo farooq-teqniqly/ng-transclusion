@@ -8,15 +8,10 @@ import { TodoItem } from '../models/todo-item.interface';
 })
 export class TodoItemListComponent implements OnInit {
 
-  todos: TodoItem[] = [];
-
   constructor() {
-    this.todos = [
-      { name: 'Eat', content: 'East something.'},
-      { name: 'Study', content: 'Study for test.'},
-      { name: 'Groceries', content: 'Go to Safeway.'}
-    ];
   }
+
+  @Input() todos: TodoItem[];
 
   ngOnInit(): void {
   }
